@@ -7,19 +7,7 @@
       <button type="button" @click="game.lookAround()">Осмотреться</button>
     </div>
 
-    <div class="compass">
-      <button
-        v-for="dir in dirs"
-        :key="dir"
-        type="button"
-        class="dir"
-        :class="dir"
-        :disabled="!game.canMove(dir)"
-        @click="game.move(dir)"
-      >
-        {{ DIRECTION_LABEL[dir] }}
-      </button>
-    </div>
+    <MoveControls />
 
     <Minimap />
 
@@ -39,15 +27,14 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import * as game from './engine/game';
-import { DIRECTION_LABEL, type DirectionT } from './types';
+import { DIRECTION_LABEL } from './types';
 import Minimap from './components/minimap/minimap.vue';
+import MoveControls from './components/move-controls/move-controls.vue';
 
 const state = game.state;
 const location = computed(() => game.getLocation());
 const room = computed(() => game.getRoom());
 const exits = computed(() => game.getExits());
-
-const dirs: DirectionT[] = ['up', 'left', 'right', 'down'];
 </script>
 
 <style scoped>
