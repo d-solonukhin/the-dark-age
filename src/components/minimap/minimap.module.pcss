@@ -1,22 +1,24 @@
 .minimap {
-    display: grid;
+  display: grid;
   gap: 4px;
   width: fit-content;
   margin: 16px 0;
 }
 
 .minimap__row {
-display: grid;
+  display: grid;
   grid-template-columns: repeat(8, 28px);
   gap: 4px;
 }
 
 .minimap__cell {
-width: 28px;
-  height: 28px;
-  border: 1px solid #ddd;
   display: grid;
-  place-items: center;
-  font-family: monospace;
+  width: 28px;
+  height: 28px;
+
   color: #bbb;
+  font-family: monospace;
+
+  border: 1px solid #ddd;
+  place-items: center;
 }
