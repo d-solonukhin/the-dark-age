@@ -1,0 +1,21 @@
+import pluginVue from "eslint-plugin-vue";
+import { withVueTs, vueTsConfigs } from "@vue/eslint-config-typescript";
+import skipFormatting from "@vue/eslint-config-prettier/skip-formatting";
+
+export default withVueTs(
+  {
+    name: "app/files",
+    files: ["**/*.{ts,mts,tsx,vue}"],
+  },
+  {
+    ignores: ["dist/**", "node_modules/**"],
+  },
+  pluginVue.configs["flat/essential"],
+  vueTsConfigs.recommended,
+  skipFormatting,
+  {
+    rules: {
+      "vue/multi-word-component-names": "off",
+    },
+  },
+);

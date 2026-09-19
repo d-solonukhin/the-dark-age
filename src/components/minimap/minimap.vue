@@ -10,14 +10,14 @@
           hero: cell === room.id,
         }"
       >
-        {{ cell === room.id ? "@" : cell ? "·" : "" }}
+        {{ cell === room.id ? '@' : cell ? '·' : '' }}
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useGame } from "../../engine/useGame";
+import { useGame } from '@/engine/useGame';
 
 const { cells, room } = useGame();
 </script>

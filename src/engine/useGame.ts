@@ -1,7 +1,7 @@
-import { computed } from "vue";
-import * as game from "./game";
-import { MAP_SIZE } from "../consts";
-import type { DirectionT } from "../types";
+import { computed } from 'vue';
+import * as game from './game';
+import { MAP_SIZE } from '../consts';
+import type { DirectionT } from '../types';
 
 export function useGame() {
   const location = computed(() => game.getLocation());

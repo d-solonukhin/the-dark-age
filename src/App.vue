@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import * as game from "./engine/game";
-import { DIRECTION_LABEL, type DirectionT } from "./types";
-import { MAP_SIZE } from "./consts";
+import { computed } from 'vue';
+import * as game from './engine/game';
+import { DIRECTION_LABEL, type DirectionT } from './types';
+import { MAP_SIZE } from './consts';
 
 const state = game.state;
 const location = computed(() => game.getLocation());
 const room = computed(() => game.getRoom());
 const exits = computed(() => game.getExits());
 
-const dirs: DirectionT[] = ["up", "left", "right", "down"];
+const dirs: DirectionT[] = ['up', 'left', 'right', 'down'];
 
 const cells = computed(() => {
   const grid: Array<Array<string | null>> = Array.from(
@@ -61,13 +61,13 @@ const cells = computed(() => {
             hero: cell === room.id,
           }"
         >
-          {{ cell === room.id ? "@" : cell ? "·" : "" }}
+          {{ cell === room.id ? '@' : cell ? '·' : '' }}
         </div>
       </div>
     </section>
 
     <p class="muted">
-      Выходы: {{ exits.map((d) => DIRECTION_LABEL[d]).join(", ") || "нет" }}
+      Выходы: {{ exits.map((d) => DIRECTION_LABEL[d]).join(', ') || 'нет' }}
     </p>
 
     <section class="log">
@@ -101,9 +101,9 @@ const cells = computed(() => {
   width: 280px;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas:
-    ". up ."
-    "left . right"
-    ". down .";
+    '. up .'
+    'left . right'
+    '. down .';
   gap: 8px;
   margin: 12px 0;
 }
