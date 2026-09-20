@@ -1,20 +1,23 @@
 <template>
   <main class="game">
-    <GameHeader />
+    <div class="game__left-side">
+      <GameLog />
 
-    <ActionPanel />
+      <ActionPanel />
+    </div>
 
-    <MoveControls />
+    <div class="game__right-side">
+      <Minimap />
 
-    <Minimap />
+      <hr />
 
-    <GameLog />
+      <MoveControls />
+    </div>
   </main>
 </template>
 
 <script setup lang="ts">
 import ActionPanel from '@/components/action-panel/action-panel.vue';
-import GameHeader from '@/components/game-header/game-header.vue';
 import GameLog from '@/components/game-log/game-log.vue';
 import Minimap from '@/components/minimap/minimap.vue';
 import MoveControls from '@/components/move-controls/move-controls.vue';

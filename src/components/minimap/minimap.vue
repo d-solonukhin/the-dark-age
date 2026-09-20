@@ -1,17 +1,25 @@
 <template>
   <div class="minimap">
-    <div v-for="(row, y) in cells" :key="y" class="minimap__row">
-      <div
-        v-for="(cell, x) in row"
-        :key="x"
-        class="minimap__cell"
-        :class="{
-          room: Boolean(cell),
-          hero: cell === room.id,
-        }"
-      >
-        {{ cell === room.id ? 'H' : cell ? '·' : '' }}
+    <div class="minimap__map">
+      <div v-for="(row, y) in cells" :key="y" class="minimap__row">
+        <div
+          v-for="(cell, x) in row"
+          :key="x"
+          class="minimap__cell"
+          :class="{
+            room: Boolean(cell),
+            hero: cell === room.id,
+          }"
+        >
+          {{ cell === room.id ? 'H' : cell ? '·' : '' }}
+        </div>
       </div>
+    </div>
+
+    <div class="minimap__wrapper">
+      <p class="minimap__location">{{ location.name }}</p>
+
+      <h3 class="minimap__room">{{ room.name }}</h3>
     </div>
   </div>
 </template>

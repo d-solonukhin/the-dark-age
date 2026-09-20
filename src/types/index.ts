@@ -3,10 +3,10 @@ export type DirectionT = 'up' | 'down' | 'left' | 'right';
 export type LogEntryKindT = 'enter' | 'look' | 'move' | 'system';
 
 export const DIRECTION_LABEL: Record<DirectionT, string> = {
-  up: 'Вверх',
-  down: 'Вниз',
-  left: 'Влево',
-  right: 'Вправо',
+  up: 'Вверх ↑',
+  down: 'Вниз ↓',
+  left: 'Влево ←',
+  right: 'Вправо →',
 };
 
 export interface UniqueEntityI {
